@@ -1,8 +1,9 @@
 const express = require('express');
+const ip = require('ip');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('CodeDeploy로 배포된 AWS exercise의 첫 번째 A project 버전입니다.');
+  res.send('CodeDeploy로 배포된 AWS exercise의 첫 번째 A project 버전입니다.' + ip.address());
 });
 
 app.listen(3000, () => {
